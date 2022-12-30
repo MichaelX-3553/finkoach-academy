@@ -1,0 +1,168 @@
+.register-box {
+	width: 50%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--light-clr);
+	padding: 30px;
+}
+
+.logo-wrapper {
+	text-decoration: none;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.logo-wrapper .logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.logo-wrapper .logo > img {
+	width: 30px;
+}
+
+.logo-wrapper .logo > p {
+	font-size: 1.3rem;
+	color: var(--dark-clr);
+	font-weight: 600;
+}
+
+.logo-wrapper .logo > p.mobile-p {
+	display: none;
+}
+
+.register-box .form {
+	width: 100%;
+	flex-grow: 1;
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.form-box > h1 {
+	font-size: 2.5rem;
+	line-height: 60px;
+}
+
+.form-box > p {
+	font-size: 1rem;
+}
+
+.form-box > h1,
+.form-box > p {
+	text-align: center;
+	color: var(--dark-clr);
+	font-weight: 500;
+}
+
+.form-box .inputs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+
+.inputs > label {
+	color: var(--dark-clr);
+	font-weight: 400;
+	font-size: 1rem;
+	width: 100%;
+	max-width: 400px;
+}
+
+.inputs > label > input {
+	width: 100%;
+	height: 47px;
+	border-radius: 10px;
+	border: 3px solid var(--mid-dark-clr);
+	margin-top: 10px;
+	padding: 10px;
+	font-weight: 500;
+	color: #708589;
+	font-size: 1rem;
+}
+
+.inputs > label > input::placeholder {
+	font-weight: 500;
+	color: #708589;
+	font-size: 1rem;
+}
+
+.inputs .submit-btn {
+	max-width: 400px;
+	width: 100%;
+	height: 47px;
+	border-radius: 10px;
+	font-weight: 500;
+	color: var(--light-clr);
+	font-size: 1rem;
+	background: var(--green-clr);
+	cursor: pointer;
+}
+
+.inputs > a {
+	font-size: 0.8rem;
+	color: var(--light-blue);
+}
+
+.form .copyright {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-weight: 500;
+	color: var(--dark-clr);
+	font-size: 0.8rem;
+}
+
+@media (max-width: 800px) {
+	.register-box {
+		width: 100%;
+		padding-block: 70px;
+	}
+
+	.logo-wrapper {
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.logo-wrapper .logo {
+		gap: 2px;
+		justify-content: center;
+	}
+
+	.logo-wrapper .logo > img {
+		width: 60px;
+	}
+
+	.logo-wrapper .logo > p {
+		display: none;
+	}
+
+	.register-box .form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding-bottom: 30px;
+	}
+
+	.form-box .inputs {
+		margin-top: 50px;
+	}
+
+	.form .copyright {
+		position: relative;
+		text-align: center;
+		margin-top: 30px;
+	}
+}

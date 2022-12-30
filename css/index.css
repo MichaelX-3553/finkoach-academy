@@ -1,0 +1,44 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	background: var(--dark-clr);
+	position: relative;
+}
+.container > .links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+h1 {
+	color: var(--light-clr);
+	font-weight: 700;
+	font-size: 3.5rem;
+	text-align: center;
+}
+.logo-wrapper {
+	width: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
+.logo p {
+	color: var(--light-clr) !important;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+@media (max-width: 800px) {
+	.logo-wrapper {
+		top: unset;
+		left: unset;
+		position: relative;
+	}
+}

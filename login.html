@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon" />
+		<title>FKA LOGIN</title>
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./css/reg-box.css" />
+	</head>
+	<body>
+		<div class="container">
+			<section class="register-box">
+				<a class="logo-wrapper" href="index.html">
+					<div class="logo">
+						<img src="./Images/logo.png" alt="finkoach academy logo" />
+						<p>Finkoach Forex Academy</p>
+					</div>
+				</a>
+				<div class="form">
+					<section class="form-box">
+						<h1>Input Your Details</h1>
+						<p>Welcome Back</p>
+						<br />
+						<br />
+						<form class="inputs" action="login.php" method="POST">
+							<label for="reg_number"
+								>Registration Number: <br />
+								<input type="number" id="reg_number" name="reg_number"
+							/></label>
+							<label for="password"
+								>Password: <br />
+								<input type="password" id="password" name="password"
+							/></label>
+							<br />
+							<input type="submit" value="Submit" class="submit-btn" />
+							<a href="register.html">Don't have an account? Sign up here</a>
+						</form>
+					</section>
+					<p class="copyright">© Copyright FKA 2022</p>
+				</div>
+			</section>
+			<div class="illustration">
+				<img src="./Images/illustration.png" alt="a minimalistic illustration of wave form lines" />
+			</div>
+		</div>
+	</body>
+</html>

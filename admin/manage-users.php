@@ -1,0 +1,146 @@
+<?php include("../config/constants.php") ?>
+
+<?php
+
+    $id;
+    $manage_id;
+
+    if($_GET['id']){
+        $id = $_GET['id'];
+        $manage_id = $_GET['id'];
+    }else{
+        header('Location: ../login.html'); 
+    }
+
+    $sql = "SELECT * FROM users WHERE id='$id'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        // Get the user
+        $user = mysqli_fetch_assoc($result);
+        
+        if($user['is_admin'] != 1){
+            header('Location: ../login.html');    
+        }
+
+    }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon" />
+    <title>FKA USERS</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/reg-box.css" />
+</head>
+
+<body>
+
+    <main class="main-content">
+        <div class="wrapper">
+            <h2>Manage Users</h2>
+            <br>
+            <a target="_blank"
+                href="<?php echo SITEURL . 'admin/manage-admins.php?id=$2y$10$ZWgo8yx0NXkYXvWHoBtFDeIK2necm.j5.j1r.FJeuXdF.rGDyTFX2'?>"
+                class="btn btn-primary">Manage
+                Admins</a>
+            <br><br>
+            <table class="tbl-full">
+                <tr>
+                    <th>S.N</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Registration Number</th>
+                    <th>Registration Date</th>
+                    <th>Admin Status</th>
+                    <th>Actions</th>
+                </tr>
+
+                <?php 
+                    $sql = "SELECT * FROM users";
+                    
+                    $res = mysqli_query($conn, $sql);
+
+                    if($res == TRUE){
+                        $count = mysqli_num_rows($res);
+
+                        $sn = 1;
+                        if($count > 0){
+                            while ($rows = mysqli_fetch_assoc($res)) {
+
+                                $id = $rows['id'];
+                                $name = $rows['name'];
+                                $phone = $rows['phone'];
+                                $password = $rows['password'];
+                                $reg_number = $rows['reg_number'];
+                                $reg_date = $rows['reg_date'];
+                                $is_admin = $rows['is_admin'];
+
+                                ?>
+
+                <tr>
+                    <td><?php echo $sn++; ?></td>
+                    <td><?php echo $name; ?></td>
+                    <td><?php echo $phone; ?></td>
+                    <td><?php echo $reg_number; ?></td>
+                    <td><?php echo $reg_date; ?></td>
+                    <td><?php if ($is_admin == 0) {
+                            echo 'false'; }else if ($is_admin == 1) { echo 'true'; } else { echo 'undefined'; } ?>
+                    </td>
+                    <td>
+                        <?php
+                            if($reg_number != 1672267785215){
+                        ?>
+                        <a href="<?php echo SITEURL; ?>admin/delete-user.php?id=<?php echo $id; ?>&manage_id=<?php echo $manage_id; ?>"
+                            class="btn btn-danger">Delete User</a>
+                        <?php    
+                            }
+                        ?>
+                        <?php 
+                            // Only adds the make an admin button if the user is not already an admin
+                            if(($is_admin == 0)){
+                        ?>
+                        <a href="<?php echo SITEURL; ?>admin/add-admin.php?id=<?php echo $id; ?>&manage_id=<?php echo $manage_id; ?>"
+                            class="btn btn-secondary">Make Admin</a>
+
+                        <?php    
+                            }else{
+                        ?>
+                        <a href="#" class="btn btn-secondary disabled">Make Admin</a>
+                        <?php        
+                            }
+                        ?>
+                    </td>
+                </tr>
+
+                <?php
+                            }
+                        }else{
+                            //* We do not have data in database
+                        }
+                    }
+
+                ?>
+            </table>
+        </div>
+    </main>
+
+    <?php
+
+
+    $arr = [100];
+    var_dump(array_search(1, $arr));
+
+    ?>
+
+    <?php include("./partials/footer.php") ?>
