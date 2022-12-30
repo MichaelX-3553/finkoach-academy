@@ -10,7 +10,7 @@ Finkoach Academy is a web application for managing a group of users and admins. 
 2. Connect to a MySQL database by setting the appropriate parameters in `config/constants.php`.
 3. Use the registration page (`register.html`) for new users to register.
 4. Use the login page (`login.html`) to log in as an existing user.
-5. Once logged in, users have access to their dashboard (`dashboard.php`).
+5. Once logged in, users have access to their dashboard (`profile.php`).
 6. Admins have additional functionality:
    1. View and manage all users (`manage-users.php`).
    2. View and manage all admins (`manage-admins.php`).
