@@ -27,7 +27,7 @@ Finkoach Academy is a web application for managing a group of users and admins. 
 - `js/`: contains JavaScript files for the application.
 - `register.html`: registration page for new users.
 - `login.html`: login page for existing users.
-- `dashboard.php`: dashboard for logged in users.
+- `profile.php`: dashboard for logged in users.
 - `manage-users.php`: view and manage all users (admins only).
 - `manage-admins.php`: view and manage all admins (admins only).
 - `add-admin.php`: promote a user to admin status (admins only).
